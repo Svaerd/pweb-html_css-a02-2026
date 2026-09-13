@@ -106,6 +106,26 @@ nav.nav {
   line-height:1.35;
   margin:16px 0 16px;
 
+.home-hero h1 span {
+  display: block;
+  overflow: hidden;
+  white-space: normal;
+  border-right: 3px solid transparent;
+  width: 0;
+}
+
+.home-hero h1 .line-1 {
+  animation:
+    typing 1s steps(10, end) forwards,
+    blink 0.75s step-end 1.5; /* Blinks while typing */
+}
+
+.home-hero h1 .line-2 {
+  animation:
+    typing 1.5s steps(20, end) forwards 1s,
+    blink 0.75s step-end infinite 1s;
+}
+
 .profile-section {
   display: flex;
   align-items: center;
@@ -296,6 +316,21 @@ footer.footer {
   height:18px; 
 }
 
-@media (max-width:360px){
-  .content{ padding:32px 20px 40px; }
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
 }
