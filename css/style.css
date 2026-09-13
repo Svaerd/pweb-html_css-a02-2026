@@ -570,18 +570,19 @@ footer.footer {
 }
 
 .socials a {
-  color: var(--text-dim);
   display: flex;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
-.socials a:hover {
-  color: var(--text);
+.socials img {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
 }
 
-.socials svg {
-  width: 18px;
-  height: 18px;
+.socials a:hover img {
+  opacity: 1;
 }
 
 @keyframes typing {
