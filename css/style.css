@@ -1,9 +1,9 @@
 :root {
   --bg:#0a0a0a;
   --bg-raised:#161616;
-  --bg-nav:#1b1b1b;
-  --bg-nav-active:#3c3c3c;
-  --bg-nav-active-hover:#242424;
+  --bg-nav:rgba(27,27,27,0.55);
+  --bg-nav-active:rgba(60,60,60,0.75);
+  --bg-nav-active-hover:rgba(36,36,36,0.75);
   --field-bg:rgba(255,255,255,0.06);
   --border:rgba(255,255,255,0.08);
   --text:#f2f2f2;
@@ -38,8 +38,11 @@ body {
 nav.nav {
   display:flex;
   justify-content:center;
-  padding:clamp(28px, 3vw, 40px) 16px 8px;
   flex-shrink:0;
+  padding:clamp(28px, 3vw, 40px) 0 0;
+  position:sticky;
+  top:0;
+  z-index:50;
 }
 
 .nav-pill {
@@ -49,8 +52,9 @@ nav.nav {
   border:1px solid var(--border);
   border-radius:999px;
   padding:clamp(4px, 0.4vw, 6px);
+  backdrop-filter:blur(12px);
+  webkit-backdrop-filter:blur(12px);
 }
-
 .nav-item {
   color:var(--text-muted);
   text-decoration:none;
@@ -277,5 +281,5 @@ footer.footer {
 }
 
 @media (max-width:360px){
-  .content{ padding:32px 20px 40px; }
+  .content{ padding-left:20px; padding-right:20px; padding-bottom:40px; }
 }
