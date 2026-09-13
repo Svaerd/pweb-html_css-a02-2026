@@ -15,9 +15,9 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100%;
+html,body { 
+  height:100%; 
+  scroll-behavior:smooth;
 }
 
 body {
@@ -41,21 +41,25 @@ body {
 
 /* ---------- Nav ---------- */
 nav.nav {
-  display: flex;
-  justify-content: center;
-  padding: clamp(28px, 3vw, 40px) 16px 8px;
-  flex-shrink: 0;
+  display:flex;
+  justify-content:center;
+  flex-shrink:0;
+  padding:clamp(28px, 3vw, 40px) 0 0;
+  position:sticky;
+  top:0;
+  z-index:50;
 }
 
 .nav-pill {
-  display: inline-flex;
-  gap: 2px;
-  background: var(--bg-nav);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  padding: clamp(4px, 0.4vw, 6px);
+  display:inline-flex;
+  gap:2px;
+  background:var(--bg-nav);
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:clamp(4px, 0.4vw, 6px);
+  backdrop-filter:blur(12px);
+  webkit-backdrop-filter:blur(12px);
 }
-
 .nav-item {
   color: var(--text-muted);
   text-decoration: none;
@@ -178,6 +182,120 @@ nav.nav {
 
 .bio-card p:last-child {
   margin-bottom: 0;
+}
+
+/* ---------- About ---------- */
+.education-item {
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.dot {
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--text-muted);
+  margin-top:8px;
+  flex-shrink:0;
+}
+
+.education-text { 
+  flex:1; 
+}
+
+.edu-title { 
+  margin:0; 
+  font-size:clamp(14px, 0.4vw + 12px, 16px); 
+  font-weight:600; 
+}
+
+.edu-sub { 
+  margin:3px 0 0; 
+  font-size:clamp(13px, 0.3vw + 11px, 15px); 
+  color:var(--text-muted); 
+}
+
+.edu-date {
+  font-size:clamp(13px, 0.3vw + 11px, 15px);
+  color:var(--text-muted);
+  white-space:nowrap;
+  margin-top:1px;
+}
+
+.skill-group { 
+  margin-bottom:26px; 
+}
+
+.skill-group:last-child { 
+  margin-bottom:0; 
+}
+
+.skill-label {
+  font-size:clamp(13px, 0.3vw + 11px, 15px);
+  font-weight:500;
+  color:var(--text-muted);
+  margin:0 0 14px;
+}
+
+.icon-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:clamp(14px, 1.2vw, 20px);
+}
+
+.icon-badge {
+  width:clamp(52px, 4vw, 66px);
+  height:clamp(52px, 4vw, 66px);
+  border-radius:14px;
+  background:var(--bg-raised);
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+}
+
+.icon-badge img { 
+  width:clamp(26px, 2vw, 33px); 
+  height:clamp(26px, 2vw, 33px); 
+  object-fit:contain; 
+}
+
+.icon-badge img.invert-icon { 
+  filter:invert(1) brightness(1.4); 
+}
+
+.icon-fallback {
+  font-size:9.5px;
+  font-weight:600;
+  color:var(--text-muted);
+  text-align:center;
+  line-height:1.15;
+  padding:0 4px;
+}
+
+.cv-badge {
+  width:52px;
+  height:52px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-muted);
+  text-decoration:none;
+  transition:color .2s ease, border-color .2s ease;
+}
+
+.cv-badge:hover { 
+  color:var(--text); 
+  border-color:rgba(255,255,255,0.2); 
+}
+
+.cv-badge svg { 
+  width:20px; 
+  height:20px; 
 }
 
 /* ---------- Work ---------- */
