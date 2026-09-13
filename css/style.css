@@ -105,6 +105,26 @@ nav.nav {
   font-weight:700;
   line-height:1.35;
   margin:16px 0 16px;
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 32px;
+}
+
+.profile-img {
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% top;
+  width: 120px;
+  height: 120px;
+}
+
+.profile-img-large {
+  width: 180px;
+  height: 180px;
+  margin: auto;
 }
 
 .bio-card {
